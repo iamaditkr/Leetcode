@@ -23,28 +23,11 @@ public:
         if (count%2 == 0) node = 0.5*count + 1;
         else node = 0.5*count + 0.5;
 
-        if (node==1) return head;
+// We did not account for the case when node == 1 coz. the LL can't be empty or in case of only one element, the the temp was already assigned to the head and skips the while loop.
         while(node>1){
             node--;
             temp = temp->next;
         }
-
         return temp;
-
-        // if(count%2 == 0){
-        //     while(it<=count/2 + 1){
-        //         temp = temp->next;
-        //         it++;
-        //     }
-        //     return temp;
-        // } else{
-        //     while(it<=count/2 + 0.5){
-        //         temp = temp->next;
-        //         it++;
-        //     }
-        //     return temp;
-        // }
-        
-        
     }
 };
